@@ -1,0 +1,190 @@
+:root {
+  /*====Variables====*/
+  --SoftCyan-FullSliderBar: hsl(174, 77%, 80%);
+  --StrongCyan-SliderBackround: hsl(174, 86%, 45%);
+  --LightGrayishRed-DiscountBackground: hsl(14, 92%, 95%);
+  --LightRed-DiscountText: hsl(15, 100%, 70%);
+  --PaleBlue-CTAText: hsl(226, 100%, 87%);
+
+  --White-PricingComponentBackground: hsl(0, 0%, 100%);
+  --VeryPaleBlue-MainBackground: hsl(230, 100%, 99%);
+  --LightGrayishBlue-EmptySliderBar: hsl(224, 65%, 95%);
+  --LightGrayishBlue-ToggleBackground: hsl(223, 50%, 87%);
+  --GrayishBlue-Text: hsl(225, 20%, 60%);
+  --DarkDesaturatedBlue-TextCTABackground: hsl(227, 35%, 25%);
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  background-image: url(".\images\bg-pattern.svg");
+  text-align: center;
+}
+
+/*====Head====*/
+.head{
+  background-image: url("images\bg-pattern.svg");
+  padding: 2.5rem 0;
+}
+.head p{
+  color:var(--GrayishBlue-Text);
+  font-weight: bold;
+}
+
+
+/*====Card====*/
+.card{
+  max-width: 325px;
+  background-color: var(--White-PricingComponentBackground); 
+  box-shadow: -2px 25px 35px 0px hsl(224deg 65% 95%);
+  margin: auto;
+  border-radius: 1rem;
+  font-weight: 600;
+  color: var(--GrayishBlue-Text)
+}
+p:first-child {
+  text-transform: uppercase;
+  padding: 2rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+.tick{
+  margin-right: 0.5rem;
+}
+li{
+  padding: 0.2rem;
+}
+.card .trial{
+  padding: 1rem 3rem;
+  margin: 1rem 1rem 2.5rem;
+  border-radius: 2rem;
+  background-color: var(--DarkDesaturatedBlue-TextCTABackground);
+  color:white;
+  border: none;
+}
+#price{
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+  padding: 0.5rem;
+}
+.billing{
+  padding: 1rem 0 2.5rem;
+  margin: 0;
+}
+.discount{
+  color:var(--LightRed-DiscountText);
+  background-color: var(--LightGrayishRed-DiscountBackground);
+  padding: 3px 10px;
+  border-radius: 15px;
+}
+/*====slider====*/
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 280px;
+  height: 10px;
+  padding: 0;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+
+/*Chrome thumb*/
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 5px;
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  background-color: var(--SoftCyan-FullSliderBar);
+  background-image: hsl(174, 86%, 45%), url(".\icon-slider.svg");
+}
+
+input[type="range"]::-webkit-slider-thumb:hover{
+  background-color: var(--StrongCyan-SliderBackround);
+  box-shadow: 0px 30px 60px hsl(174, 86%, 45%);
+}
+
+
+/*Mozilla thumb*/
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -moz-border-radius: 5px;
+  height: 14px;
+  width: 14px;
+  border-radius: 5px;
+  background: #e7e7e7;
+  border: 1px solid #c5c5c5;
+}
+
+
+/*IE & Edge input*/
+
+input[type=range]::-ms-track {
+  width: 300px;
+  height: 6px;
+  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+  background: transparent;
+  /*leave room for the larger thumb to overflow with a transparent border */
+  border-color: transparent;
+  border-width: 2px 0;
+  /*remove default tick marks*/
+  color: transparent;
+}
+
+
+/*IE & Edge thumb*/
+
+input[type=range]::-ms-thumb {
+  height: 14px;
+  width: 14px;
+  border-radius: 5px;
+  background: #e7e7e7;
+  border: 1px solid #c5c5c5;
+}
+
+
+/*IE & Edge left side*/
+
+input[type=range]::-ms-fill-lower {
+  background: #919e4b;
+  border-radius: 2px;
+}
+
+
+/*IE & Edge right side*/
+
+input[type=range]::-ms-fill-upper {
+  background: #c5c5c5;
+  border-radius: 2px;
+}
+
+
+/*IE disable tooltip*/
+
+input[type=range]::-ms-tooltip {
+  display: none;
+}
+
+input[type="text"] {
+  border: none;
+}
+/*====Footer====*/
+
+.attribution {
+  font-size: 11px;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
