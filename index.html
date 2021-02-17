@@ -29,76 +29,80 @@
       </div>
 
       <div class="card">
-        <p class="views"><span id="views"></span>Pageviews</p>
-        <div class="slidecontainer">
-          <input
-            type="range"
-            min="1"
-            max="32"
-            value="16"
-            class="slider"
-            id="myRange"
-          />
+        <div class="desktop-view">
+          <p class="views"><span id="views">1</span>Pageviews</p>
+          <div class="slidecontainer">
+            <input
+              type="range"
+              min="1"
+              max="32"
+              value="16"
+              class="slider"
+              id="myRange"
+            />
+          </div>
+          <p class="p-price"><span id="price">$16.00</span>/month</p>
         </div>
-        <p style="display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;"><span id="price">$16.00</span>/month</p>
-        <p class="billing">Monthly Billing
-          <input type="checkbox" />
-          Yearly Billing <span class="discount">-25%</span></p>
+        <p class="billing">
+          Monthly Billing
+          <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+          Yearly Billing <span class="discount">-25%</span>
+        </p>
         <hr />
-        <ul style="list-style-type: none; padding: 0">
-          <li>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="9"
-              height="8"
-              class="tick"
-            >
-              <path
-                fill="none"
-                stroke="#10D8C4"
-                stroke-width="2"
-                d="M1 4.134l1.907 1.908L7.949 1"
-              />
-            </svg>
-            Unlimited websites
-          </li>
-          <li>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="9"
-              height="8"
-              class="tick"
-            >
-              <path
-                fill="none"
-                stroke="#10D8C4"
-                stroke-width="2"
-                d="M1 4.134l1.907 1.908L7.949 1"
-              />
-            </svg>
-            100% data ownership
-          </li>
-          <li>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="9"
-              height="8"
-              class="tick"
-            >
-              <path
-                fill="none"
-                stroke="#10D8C4"
-                stroke-width="2"
-                d="M1 4.134l1.907 1.908L7.949 1"
-              />
-            </svg>
-            Email reports
-          </li>
-        </ul>
-        <button name="button" class="trial">Start my trial</button>
+        <div class="bottom-section">
+          <ul style="list-style-type: none;">
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="9"
+                height="8"
+                class="tick"
+              >
+                <path
+                  fill="none"
+                  stroke="#10D8C4"
+                  stroke-width="2"
+                  d="M1 4.134l1.907 1.908L7.949 1"
+                />
+              </svg>
+              Unlimited websites
+            </li>
+
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="9"
+                height="8"
+                class="tick"
+              >
+                <path
+                  fill="none"
+                  stroke="#10D8C4"
+                  stroke-width="2"
+                  d="M1 4.134l1.907 1.908L7.949 1"
+                />
+              </svg>
+              100% data ownership
+            </li>
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="9"
+                height="8"
+                class="tick"
+              >
+                <path
+                  fill="none"
+                  stroke="#10D8C4"
+                  stroke-width="2"
+                  d="M1 4.134l1.907 1.908L7.949 1"
+                />
+              </svg>
+              Email reports
+            </li>
+          </ul>
+          <button name="button" class="trial">Start my trial</button>
+        </div>
       </div>
 
       <div class="attribution">
@@ -109,6 +113,14 @@
       </div>
     </main>
     <script>
+
+      var n = localStorage.getItem('on_load_counter');
+    if (n === null) {
+        n = 0;
+    }
+    n++;
+    localStorage.setItem("on_load_counter", n);
+    document.getElementById('views').innerHTML = n + " ";
       function isOlderEdgeOrIE() {
         return (
           window.navigator.userAgent.indexOf("MSIE ") > -1 ||
